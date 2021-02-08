@@ -1,0 +1,24 @@
+{
+  "name": "knojector/steam-authentication-bundle",
+  "license": "MIT",
+  "type": "symfony-bundle",
+  "description": "Symfony Bundle to integrate Steam authentication",
+  "authors": [
+    {
+      "name": "knojector",
+      "email": "dev@knojector.xyz"
+    }
+  ],
+  "autoload": {
+    "psr-4": { "Knojector\\SteamAuthenticationBundle\\": "" }
+  },
+  "require": {
+    "php": ">=7.0",
+    "symfony/config": "^4.0|^5.0",
+    "symfony/dependency-injection": "^4.0|^5.0",
+    "symfony/event-dispatcher": "^4.0|^5.0",
+    "symfony/framework-bundle": "^4.0|^5.0",
+    "symfony/http-client": "^4.0|^5.0",
+    "symfony/validator": "^4.0|^5.0"
+  }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <defaults autowire="true" autoconfigure="true"/>
+
+        <service id="Knojector\SteamAuthenticationBundle\ArgumentResolver\SteamCallbackResolver" class="Knojector\SteamAuthenticationBundle\ArgumentResolver\SteamCallbackResolver"/>
+
+        <service id="Knojector\SteamAuthenticationBundle\Controller\SteamController" class="Knojector\SteamAuthenticationBundle\Controller\SteamController"/>
+
+        <service id="Knojector\SteamAuthenticationBundle\Subscriber\AuthenticateUserSubscriber" class="Knojector\SteamAuthenticationBundle\Subscriber\AuthenticateUserSubscriber"/>
+        <service id="Knojector\SteamAuthenticationBundle\Subscriber\LoadUserSubscriber" class="Knojector\SteamAuthenticationBundle\Subscriber\LoadUserSubscriber"/>
+        <service id="Knojector\SteamAuthenticationBundle\Subscriber\ValidateCallbackReceivedSubscriber" class="Knojector\SteamAuthenticationBundle\Subscriber\ValidateCallbackReceivedSubscriber"/>
+
+        <service id="Knojector\SteamAuthenticationBundle\Validator\MatchesLoginCallbackRouteValidator" class="Knojector\SteamAuthenticationBundle\Validator\MatchesLoginCallbackRouteValidator"/>
+    </services>
+</container>
