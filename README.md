@@ -2,6 +2,7 @@
 [![GitHub issues](https://img.shields.io/github/issues/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/issues)
 [![GitHub issues](https://img.shields.io/github/issues-pr/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/pulls)
 [![GitHub issues](https://img.shields.io/github/stars/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/stargazers)
+![Packagist Downloads](https://img.shields.io/packagist/dt/knojector/steam-authentication-bundle)
 
 # SteamAuthenticationBundle - Steam authentication for Symfony
 
@@ -122,4 +123,4 @@ Feel free to open an issue or submit a pull request :wink:
 ## Requirements
 The bundle requires:
 - PHP 7.0+
-- Symfony 4.0
+- Symfony 4/5
