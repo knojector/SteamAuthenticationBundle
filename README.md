@@ -1,4 +1,4 @@
-[![GitHub license](https://img.shields.io/github/license/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/issues)
 [![GitHub issues](https://img.shields.io/github/issues-pr/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/pulls)
 [![GitHub issues](https://img.shields.io/github/stars/knojector/SteamAuthenticationBundle)](https://github.com/knojector/SteamAuthenticationBundle/stargazers)
