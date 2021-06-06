@@ -122,5 +122,5 @@ Feel free to open an issue or submit a pull request :wink:
 
 ## Requirements
 The bundle requires:
-- PHP 7.0+
+- PHP 7.1.3+
 - Symfony 4/5
