@@ -6,13 +6,9 @@ use Symfony\Component\Validator\Constraint;
 
 /**
  * @author knojector <dev@knojector.xyz>
- *
- * @Annotation
  */
+#[\Attribute]
 class MatchesLoginCallbackRoute extends Constraint
 {
-    /**
-     * @var string
-     */
-    public $message = 'The parameter "openid_return_to" with value "{{ url }}" does not match original callback url "{{ expected }}".';
+    public string $message = 'The parameter "openid_return_to" with value "{{ url }}" does not match original callback url "{{ expected }}".';
 }

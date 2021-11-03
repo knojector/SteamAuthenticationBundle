@@ -15,23 +15,10 @@ use Symfony\Component\Security\Core\User\UserProviderInterface;
  */
 class LoadUserSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var EventSubscriberInterface
-     */
-    private $eventDispatcher;
-
-    /**
-     * @var UserProviderInterface
-     */
-    private $userProvider;
-
     public function __construct(
-        EventDispatcherInterface $eventDispatcher,
-        UserProviderInterface $userProvider
-    ) {
-        $this->eventDispatcher = $eventDispatcher;
-        $this->userProvider = $userProvider;
-    }
+        private EventDispatcherInterface $eventDispatcher,
+        private UserProviderInterface $userProvider
+    ) {}
 
     /**
      * @inheritDoc
@@ -45,7 +32,7 @@ class LoadUserSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onPayloadValid(PayloadValidEvent $event)
+    public function onPayloadValid(PayloadValidEvent $event): void
     {
         $communityId = $event->getCommunityId();
 

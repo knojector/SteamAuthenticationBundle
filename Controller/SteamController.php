@@ -15,31 +15,16 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 /**
  * @author knojector <dev@knojector.xyz>
  *
- * @Route("/steam")
  */
+#[Route(path: '/steam')]
 class SteamController extends AbstractController
 {
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
-
-    /**
-     * @var UrlGeneratorInterface
-     */
-    private $urlGenerator;
-
     public function __construct(
-        EventDispatcherInterface $eventDispatcher,
-        UrlGeneratorInterface $urlGenerator
-    ) {
-        $this->eventDispatcher = $eventDispatcher;
-        $this->urlGenerator = $urlGenerator;
-    }
+        private EventDispatcherInterface $eventDispatcher,
+        private UrlGeneratorInterface $urlGenerator
+    ) {}
 
-    /**
-     * @Route("/callback")
-     */
+    #[Route(path: '/callback')]
     public function callback(SteamCallback $callback): Response
     {
         try {

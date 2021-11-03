@@ -12,15 +12,8 @@ class CallbackReceivedEvent extends Event
 {
     CONST NAME = 'knojector.steam_authentication_bundle.callback_received';
 
-    /**
-     * @var SteamCallback
-     */
-    protected $steamCallback;
-
-    public function __construct(SteamCallback $steamCallback)
-    {
-        $this->steamCallback = $steamCallback;
-    }
+    public function __construct(protected SteamCallback $steamCallback)
+    {}
 
     public function getSteamCallback(): SteamCallback
     {

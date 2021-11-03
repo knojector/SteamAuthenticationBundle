@@ -13,20 +13,13 @@ use Symfony\Component\Validator\Exception\UnexpectedValueException;
  */
 class MatchesLoginCallbackRouteValidator extends ConstraintValidator
 {
-    /**
-     * @var UrlGeneratorInterface
-     */
-    private $urlGenerator;
-
-    public function __construct(UrlGeneratorInterface $urlGenerator)
-    {
-        $this->urlGenerator = $urlGenerator;
-    }
+    public function __construct(private UrlGeneratorInterface $urlGenerator)
+    {}
 
     /**
      * @inheritDoc
      */
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint): void
     {
         if (!$constraint instanceof MatchesLoginCallbackRoute) {
             throw new UnexpectedTypeException($constraint, MatchesLoginCallbackRoute::class);

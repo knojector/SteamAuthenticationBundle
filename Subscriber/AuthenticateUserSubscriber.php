@@ -17,37 +17,12 @@ use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
  */
 class AuthenticateUserSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
-
-    /**
-     * @var Request
-     */
-    private $request;
-
-    /**
-     * @var SessionInterface
-     */
-    private $session;
-
-    /**
-     * @var TokenStorageInterface
-     */
-    private $tokenStorage;
-
     public function __construct(
-        EventDispatcherInterface $eventDispatcher,
-        RequestStack $requestStack,
-        SessionInterface $session,
-        TokenStorageInterface $tokenStorage
-    ) {
-      $this->eventDispatcher = $eventDispatcher;
-      $this->request = $requestStack->getCurrentRequest();
-      $this->session = $session;
-      $this->tokenStorage = $tokenStorage;
-    }
+        private EventDispatcherInterface $eventDispatcher,
+        private SessionInterface $session,
+        private TokenStorageInterface $tokenStorage,
+        private RequestStack $requestStack,
+    ) {}
 
     /**
      * @inheritDoc
@@ -61,7 +36,7 @@ class AuthenticateUserSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onAuthenticateUser(AuthenticateUserEvent $event)
+    public function onAuthenticateUser(AuthenticateUserEvent $event): void
     {
         $user = $event->getUser();
 
@@ -69,7 +44,7 @@ class AuthenticateUserSubscriber implements EventSubscriberInterface
         $this->tokenStorage->setToken($token);
         $this->session->set('_security_steam', serialize($token));
 
-        $event = new InteractiveLoginEvent($this->request, $token);
+        $event = new InteractiveLoginEvent($this->requestStack->getCurrentRequest(), $token);
         $this->eventDispatcher->dispatch($event, 'security.interactive_login');
     }
 }

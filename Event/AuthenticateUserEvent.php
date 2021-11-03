@@ -12,15 +12,8 @@ class AuthenticateUserEvent extends Event
 {
     CONST NAME = 'knojector.steam_authentication_bundle.authenticate_user';
 
-    /**
-     * @var UserInterface
-     */
-    private $user;
-
-    public function __construct(UserInterface $user)
-    {
-        $this->user = $user;
-    }
+    public function __construct(protected UserInterface $user)
+    {}
 
     public function getUser(): UserInterface
     {

@@ -16,23 +16,10 @@ class ValidateCallbackReceivedSubscriber implements EventSubscriberInterface
 {
     const STEAM_VALIDATION_URL = 'https://steamcommunity.com/openid/login';
 
-    /**
-     * @var HttpClientInterface
-     */
-    private $client;
-
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
-
     public function __construct(
-        EventDispatcherInterface $eventDispatcher,
-        HttpClientInterface $client
-    ) {
-        $this->client = $client;
-        $this->eventDispatcher = $eventDispatcher;
-    }
+        private EventDispatcherInterface $eventDispatcher,
+        private HttpClientInterface $client
+    ) {}
 
     /**
      * @inheritDoc
@@ -46,7 +33,7 @@ class ValidateCallbackReceivedSubscriber implements EventSubscriberInterface
         ];
     }
 
-    public function onCallbackReceived(CallbackReceivedEvent $event)
+    public function onCallbackReceived(CallbackReceivedEvent $event): void
     {
         $callback = $event->getSteamCallback();
         $callback->openid_mode = 'check_authentication';
@@ -59,7 +46,7 @@ class ValidateCallbackReceivedSubscriber implements EventSubscriberInterface
             ]
         );
 
-        if (false === strpos($response->getContent(), 'is_valid:true')) {
+        if (false === str_contains($response->getContent(), 'is_valid:true')) {
             throw new InvalidCallbackPayloadException();
         }
 

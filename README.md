@@ -38,17 +38,17 @@ security:
     providers:
         users:
             entity:
-              class: 'App\Entity\User'
-              property: 'username'
-      firewalls:
-          dev:
-              pattern: ^/(_(profiler|wdt)|css|images|js)/
-              security: false
-          steam:
-              pattern: ^/
-              anonymous: true
-              lazy: true
-              provider: users
+                class: 'App\Entity\User'
+                property: 'username'
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        steam:
+            pattern: ^/
+            anonymous: true
+            lazy: true
+            provider: users
 ```
 
 The final step is to enable the bundle's controller in your `routes.yaml`
@@ -122,5 +122,5 @@ Feel free to open an issue or submit a pull request :wink:
 
 ## Requirements
 The bundle requires:
-- PHP 7.1.3+
+- PHP 8.0.0+
 - Symfony 4/5

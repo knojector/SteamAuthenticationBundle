@@ -11,80 +11,38 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class SteamCallback
 {
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     * @Assert\EqualTo("http://specs.openid.net/auth/2.0")
-     */
-    public $openid_ns;
+    #[Assert\NotBlank]
+    #[Assert\EqualTo('http://specs.openid.net/auth/2.0')]
+    public string $openid_ns;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     */
-    public $openid_mode;
+    #[Assert\NotBlank]
+    public string $openid_mode;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     * @Assert\EqualTo("https://steamcommunity.com/openid/login")
-     */
-    public $openid_op_endpoint;
+    #[Assert\NotBlank]
+    #[Assert\EqualTo('https://steamcommunity.com/openid/login')]
+    public string $openid_op_endpoint;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     * @Assert\Expression(
-     *     "this.openid_claimed_id === this.openid_identity"
-     * )
-     */
-    public $openid_claimed_id;
+    #[Assert\NotBlank]
+    #[Assert\Expression('this.openid_claimed_id === this.openid_identity')]
+    public string $openid_claimed_id;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     */
-    public $openid_identity;
+    #[Assert\NotBlank]
+    public string $openid_identity;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     * @SteamAssert\MatchesLoginCallbackRoute()
-     */
-    public $openid_return_to;
+    #[Assert\NotBlank]
+    #[SteamAssert\MatchesLoginCallbackRoute]
+    public string $openid_return_to;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     */
-    public $openid_response_nonce;
+    #[Assert\NotBlank]
+    public string $openid_response_nonce;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     */
-    public $openid_assoc_handle;
+    #[Assert\NotBlank]
+    public string $openid_assoc_handle;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     */
-    public $openid_signed;
+    #[Assert\NotBlank]
+    public string $openid_signed;
 
-    /**
-     * @var string
-     *
-     * @Assert\NotBlank()
-     */
+    #[Assert\NotBlank]
     public $openid_sig;
 
     public function getCommunityId(): string
