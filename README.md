@@ -46,7 +46,6 @@ security:
             security: false
         steam:
             pattern: ^/
-            anonymous: true
             lazy: true
             provider: users
 ```
