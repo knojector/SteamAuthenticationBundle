@@ -37,7 +37,7 @@ class LoadUserSubscriber implements EventSubscriberInterface
         $communityId = $event->getCommunityId();
 
         try {
-            $user = $this->userProvider->loadUserByUsername($communityId);
+            $user = $this->userProvider->loadUserByIdentifier($communityId);
         } catch (UsernameNotFoundException $e) {
             $this->eventDispatcher->dispatch(new FirstLoginEvent($communityId), FirstLoginEvent::NAME);
 

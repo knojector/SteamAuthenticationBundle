@@ -74,15 +74,8 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
 class FirstLoginSubscriber implements EventSubscriberInterface
 {
-    /**
-     * @var EventDispatcherInterface
-     */
-    private $eventDispatcher;
-    
-    public function __construct(EventDispatcherInterface $eventDispatcher)
-    {
-        $this->eventDispatcher = $eventDispatcher;
-    }
+    public function __construct(private EventDispatcherInterface $eventDispatcher)
+    {}
 
     /**
      * @inheritDoc
@@ -122,4 +115,4 @@ Feel free to open an issue or submit a pull request :wink:
 ## Requirements
 The bundle requires:
 - PHP 8.0.0+
-- Symfony 4/5
+- Symfony 4/5/6
