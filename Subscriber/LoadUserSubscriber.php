@@ -7,7 +7,7 @@ use Knojector\SteamAuthenticationBundle\Event\FirstLoginEvent;
 use Knojector\SteamAuthenticationBundle\Event\PayloadValidEvent;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
-use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\Exception\UserNotFoundException;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 
 /**
@@ -38,7 +38,7 @@ class LoadUserSubscriber implements EventSubscriberInterface
 
         try {
             $user = $this->userProvider->loadUserByIdentifier($communityId);
-        } catch (UsernameNotFoundException $e) {
+        } catch (UserNotFoundException $e) {
             $this->eventDispatcher->dispatch(new FirstLoginEvent($communityId), FirstLoginEvent::NAME);
 
             return;
