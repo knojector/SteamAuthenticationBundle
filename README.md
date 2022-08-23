@@ -115,4 +115,4 @@ Feel free to open an issue or submit a pull request :wink:
 ## Requirements
 The bundle requires:
 - PHP 8.0.0+
-- Symfony 4/5/6
+- Symfony 5.3/6
