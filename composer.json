@@ -13,15 +13,15 @@
     "psr-4": { "Knojector\\SteamAuthenticationBundle\\": "" }
   },
   "require": {
-    "php": ">=8.0.0",
+    "php": ">=8.2",
     "symfony/config": "^5.3|^6.0",
-    "symfony/dependency-injection": "^5.3|^6.0",
-    "symfony/event-dispatcher": "^5.3|^6.0",
-    "symfony/expression-language": "^5.3|^6.0",
-    "symfony/framework-bundle": "^5.3|^6.0",
-    "symfony/http-client": "^5.3|^6.0",
-    "symfony/security-bundle": "^5.3|^6.0",
-    "symfony/routing": "^5.3|^6.0",
-    "symfony/validator": "^5.3|^6.0"
+    "symfony/dependency-injection": "^5.3|^6.0|^7.0",
+    "symfony/event-dispatcher": "^5.3|^6.0|^7.0",
+    "symfony/expression-language": "^5.3|^6.0|^7.0",
+    "symfony/framework-bundle": "^5.3|^6.0|^7.0",
+    "symfony/http-client": "^5.3|^6.0|^7.0",
+    "symfony/security-bundle": "^5.3|^6.0|^7.0",
+    "symfony/routing": "^5.3|^6.0|^7.0",
+    "symfony/validator": "^5.3|^6.0|^7.0"
   }
 }
